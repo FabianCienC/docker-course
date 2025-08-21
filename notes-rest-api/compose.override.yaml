@@ -1,0 +1,9 @@
+services:
+  notebooks:
+    networks: #!override is completely replace not merge
+      - notes-app-net
+  notes:
+    environment:
+      - NOTEBOOKS_API_URL=http://reverse-proxy/api/notebooks
+    networks:
+      - notes-app-net
